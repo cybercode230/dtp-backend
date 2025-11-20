@@ -1,10 +1,16 @@
 const db = require('../config/db');
 const log = require('../utils/logger');
+const { v4: uuidv4 } = require('uuid');
 
 const PermissionService = {
   async createPermission(data) {
     try {
-      const [id] = await db('permissions').insert(data);
+      const id = uuidv4();
+      await db('permissions').insert({
+        id,
+        name: data.name,
+        description: data.description || null,
+      });
       log(`Permission created with ID: ${id}`, 'INFO');
       return { id, ...data };
     } catch (err) {
@@ -33,7 +39,12 @@ const PermissionService = {
 
   async updatePermission(id, data) {
     try {
-      await db('permissions').where({ id }).update(data);
+      await db('permissions')
+        .where({ id })
+        .update({
+          name: data.name,
+          description: data.description || null,
+        });
       log(`Permission updated with ID: ${id}`, 'INFO');
       return { id, ...data };
     } catch (err) {
@@ -51,7 +62,7 @@ const PermissionService = {
       log(`Failed to delete permission: ${err.message}`, 'ERROR');
       throw err;
     }
-  }
+  },
 };
 
 module.exports = PermissionService;

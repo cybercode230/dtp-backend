@@ -27,19 +27,37 @@ const UserController = {
    *                 type: string
    *               password:
    *                 type: string
+   *               role_id:
+ *                   type: string
+ *                   description: UUID of the role to assign
    *             required:
    *               - username
    *               - email
    *               - password
-   *     responses:
-   *       201:
-   *         description: User created
-   *       500:
-   *         description: Server error
+ *     responses:
+ *       201:
+ *         description: User created
+ *       400:
+ *         description: Bad request
+ *       500:
+ *         description: Server error
    */
   async create(req, res) {
     try {
-      const user = await UserService.createUser(req.body);
+      const { username, email, password, role_id } = req.body;
+
+      // Basic validation
+      if (!username || !email || !password) {
+        return res.status(400).json({ success: false, message: 'username, email, and password are required' });
+      }
+
+      const user = await UserService.createUser({
+        full_name: username,
+        email,
+        password,
+        role_id, // optional, will be passed to service layer
+      });
+
       res.status(201).json({ success: true, message: 'User created', data: user });
     } catch (err) {
       res.status(500).json({ success: false, message: err.message });

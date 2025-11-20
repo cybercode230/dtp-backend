@@ -1,10 +1,12 @@
 const db = require('../config/db');
 const log = require('../utils/logger');
+const { v4: uuidv4 } = require('uuid');
 
 const RolePermissionService = {
   async assignPermission(role_id, permission_id) {
     try {
-      const [id] = await db('role_permissions').insert({ role_id, permission_id });
+      const id = uuidv4();
+      await db('role_permissions').insert({ id, role_id, permission_id });
       log(`Permission ${permission_id} assigned to role ${role_id}`, 'INFO');
       return { id, role_id, permission_id };
     } catch (err) {
@@ -34,7 +36,7 @@ const RolePermissionService = {
       log(`Failed to remove permission: ${err.message}`, 'ERROR');
       throw err;
     }
-  }
+  },
 };
 
 module.exports = RolePermissionService;

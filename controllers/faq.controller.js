@@ -36,8 +36,21 @@ const FaqController = {
    */
   async create(req, res) {
     try {
-      const data = req.body;
-      const faq = await FaqService.createFaq(data);
+      const { question, answer, category, created_by } = req.body;
+
+      // Basic validation
+      if (!question || !answer || !created_by) {
+        return res.status(400).json({ success: false, message: 'question, answer, and created_by are required' });
+      }
+
+      const faq = await FaqService.createFaq({
+        question,
+        answer,
+        category,
+        created_by, // pass user UUID directly
+        updated_by: created_by, // optional: initially same as created_by
+      });
+
       res.status(201).json({ success: true, message: 'FAQ created', data: faq });
     } catch (err) {
       res.status(500).json({ success: false, message: err.message });

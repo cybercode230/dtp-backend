@@ -56,3 +56,72 @@
 [2025-11-20T12:28:22.386Z] [INFO] Server running at http://localhost:5000
 [2025-11-20T12:28:23.217Z] [INFO] Database connected successfully
 [2025-11-20T12:29:51.703Z] [ERROR] Failed to create user: insert into `users` (`email`, `full_name`, `password_hash`, `role_id`) values ('cyber@123gmail.com', 'Guest User', '$2b$10$dooHg5R8gooIm8QYa/ZM1uZgOAQ2RQEVUcxMQjC2M6QsBrA/IdjCO', 1) - Cannot add or update a child row: a foreign key constraint fails (`dtp_db`.`users`, CONSTRAINT `fk_users_role` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON UPDATE CASCADE)
+[2025-11-20T17:26:22.081Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:26:22.862Z] [INFO] Database connected successfully
+[2025-11-20T17:26:50.683Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:26:50.728Z] [INFO] Database connected successfully
+[2025-11-20T17:26:58.256Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:26:58.330Z] [INFO] Database connected successfully
+[2025-11-20T17:27:01.059Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:27:01.103Z] [INFO] Database connected successfully
+[2025-11-20T17:27:12.200Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:27:12.260Z] [INFO] Database connected successfully
+[2025-11-20T17:28:29.816Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:28:29.867Z] [INFO] Database connected successfully
+[2025-11-20T17:28:33.133Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:28:33.182Z] [INFO] Database connected successfully
+[2025-11-20T17:29:41.872Z] [INFO] Role created with ID: d761414c-b6b4-4101-a900-c18358549dde
+[2025-11-20T17:31:19.087Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:31:19.158Z] [INFO] Database connected successfully
+[2025-11-20T17:31:28.302Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:31:28.370Z] [INFO] Database connected successfully
+[2025-11-20T17:33:57.756Z] [ERROR] Failed to create user: insert into `users` (`email`, `full_name`, `id`, `password_hash`, `role_id`) values ('sampl@gmail.com', 'Guest User', '962bdba7-2ac4-4bac-840e-c91e9adeae31', '$2b$10$uOsO5ECJolElYgft2voib.d/Qm7y3PeyhVQE5nwRgaowUh/u/kUhC', '00000000-0000-0000-0000-000000000001') - Cannot add or update a child row: a foreign key constraint fails (`dtp_db`.`users`, CONSTRAINT `fk_users_role` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON UPDATE CASCADE)
+[2025-11-20T17:42:31.796Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:42:31.881Z] [INFO] Database connected successfully
+[2025-11-20T17:42:37.506Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:42:37.547Z] [INFO] Database connected successfully
+[2025-11-20T17:42:42.240Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:42:42.304Z] [INFO] Database connected successfully
+[2025-11-20T17:42:44.376Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:42:44.459Z] [INFO] Database connected successfully
+[2025-11-20T17:42:45.752Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:42:45.828Z] [INFO] Database connected successfully
+[2025-11-20T17:42:52.401Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:42:52.441Z] [INFO] Database connected successfully
+[2025-11-20T17:42:55.090Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:42:55.150Z] [INFO] Database connected successfully
+[2025-11-20T17:45:29.736Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:45:29.800Z] [INFO] Database connected successfully
+[2025-11-20T17:48:11.464Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:48:11.518Z] [INFO] Database connected successfully
+[2025-11-20T17:48:16.034Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:48:16.101Z] [INFO] Database connected successfully
+[2025-11-20T17:48:47.522Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:48:47.574Z] [INFO] Database connected successfully
+[2025-11-20T17:49:00.448Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:49:00.498Z] [INFO] Database connected successfully
+[2025-11-20T17:49:03.354Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:49:03.418Z] [INFO] Database connected successfully
+[2025-11-20T17:51:07.981Z] [INFO] User created with ID: b7487ab3-5a2e-4134-8e53-abbaef3ec259
+[2025-11-20T17:55:53.861Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:55:53.910Z] [INFO] Database connected successfully
+[2025-11-20T17:56:03.451Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:56:03.502Z] [INFO] Database connected successfully
+[2025-11-20T17:56:44.457Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:56:44.521Z] [INFO] Database connected successfully
+[2025-11-20T17:56:47.232Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T17:56:47.273Z] [INFO] Database connected successfully
+[2025-11-20T18:02:19.540Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T18:02:19.588Z] [INFO] Database connected successfully
+[2025-11-20T18:10:47.193Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T18:10:47.942Z] [INFO] Database connected successfully
+[2025-11-20T18:14:23.840Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T18:14:24.473Z] [INFO] Database connected successfully
+[2025-11-20T18:14:26.571Z] [INFO] FAQ created with ID: db49feda-5a7c-47e3-88f6-43e72c0d8ef8
+[2025-11-20T18:21:03.343Z] [ERROR] Failed to create FAQ: insert into `faq` (`answer`, `category`, `created_by`, `id`, `question`, `updated_by`) values ('Members gain access to networking events, workshops, business mentorship, and advocacy support.', 'ICT Chamber', '962bdba7-2ac4-4bac-840e-c91e9adeae31', '6a410f79-8a71-4798-9a2a-356f0e553462', 'What are the membership benefits of ICT Chamber?', '962bdba7-2ac4-4bac-840e-c91e9adeae31') - Cannot add or update a child row: a foreign key constraint fails (`dtp_db`.`faq`, CONSTRAINT `fk_faq_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE)
+[2025-11-20T18:21:50.878Z] [INFO] FAQ created with ID: 49ee0bd4-c6cb-4144-b818-8f1772324685
+[2025-11-20T18:22:47.689Z] [INFO] FAQ created with ID: 9b641195-7fd3-48e3-86f0-8ab2c0e96c2e
+[2025-11-20T18:23:40.846Z] [INFO] FAQ created with ID: 72c93dec-a293-4dfa-aa6a-953ff060b50b
+[2025-11-20T18:24:21.447Z] [INFO] FAQ created with ID: 4f95061e-cfd1-4907-a04a-d7f6102fbc80
+[2025-11-20T18:24:55.203Z] [INFO] FAQ created with ID: a52e68c4-a0e7-498b-81a9-461aff8a55a9
+[2025-11-20T18:25:32.948Z] [INFO] FAQ created with ID: 07770892-2446-4327-babf-885b30eb685e

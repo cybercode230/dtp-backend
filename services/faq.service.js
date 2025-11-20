@@ -1,22 +1,20 @@
 const db = require('../config/db');
 const log = require('../utils/logger');
+const { v4: uuidv4 } = require('uuid');
 
 const FaqService = {
-  /**
-   * Create a new FAQ question
-   * Automatically sets created_by and updated_by to Guest (id=1) if not provided
-   */
   async createFaq(data) {
     try {
-      const defaultUserId = 1; // Guest user
-      const [id] = await db('faq').insert({
+      const id = uuidv4();
+      const defaultUserId = uuidv4(); // You may replace with actual Guest user UUID
+      await db('faq').insert({
+        id,
         question: data.question,
-        answer: data.answer || '', // default empty answer if none provided
+        answer: data.answer || '',
         category: data.category || 'General',
         created_by: data.created_by || defaultUserId,
         updated_by: data.updated_by || data.created_by || defaultUserId,
       });
-
       log(`FAQ created with ID: ${id}`, 'INFO');
       return { id, ...data };
     } catch (err) {
@@ -25,96 +23,39 @@ const FaqService = {
     }
   },
 
-  /**
-   * Get all FAQs
-   */
   async getAllFaqs() {
-    try {
-      const faqs = await db('faq').select('*').orderBy('created_at', 'desc');
-      return faqs;
-    } catch (err) {
-      log(`Failed to fetch FAQs: ${err.message}`, 'ERROR');
-      throw err;
-    }
+    return db('faq').select('*').orderBy('created_at', 'desc');
   },
 
-  /**
-   * Get FAQ by ID
-   */
   async getFaqById(id) {
-    try {
-      const faq = await db('faq').where({ id }).first();
-      return faq;
-    } catch (err) {
-      log(`Failed to fetch FAQ by ID: ${err.message}`, 'ERROR');
-      throw err;
-    }
+    return db('faq').where({ id }).first();
   },
 
-  /**
-   * Update FAQ by ID
-   */
   async updateFaq(id, data) {
-    try {
-      const updatedData = {
-        question: data.question,
-        answer: data.answer,
-        category: data.category,
-        updated_by: data.updated_by || 1, // default to Guest if missing
-      };
-
-      await db('faq').where({ id }).update(updatedData);
-      log(`FAQ updated with ID: ${id}`, 'INFO');
-      return { id, ...updatedData };
-    } catch (err) {
-      log(`Failed to update FAQ: ${err.message}`, 'ERROR');
-      throw err;
-    }
+    const updatedData = {
+      question: data.question,
+      answer: data.answer,
+      category: data.category,
+      updated_by: data.updated_by || uuidv4(),
+    };
+    await db('faq').where({ id }).update(updatedData);
+    return { id, ...updatedData };
   },
 
-  /**
-   * Delete FAQ by ID
-   */
   async deleteFaq(id) {
-    try {
-      await db('faq').where({ id }).del();
-      log(`FAQ deleted with ID: ${id}`, 'INFO');
-      return true;
-    } catch (err) {
-      log(`Failed to delete FAQ: ${err.message}`, 'ERROR');
-      throw err;
-    }
+    await db('faq').where({ id }).del();
+    return true;
   },
 
-  /**
-   * Get FAQs by category
-   */
   async getFaqsByCategory(category) {
-    try {
-      const faqs = await db('faq').where({ category }).select('*').orderBy('created_at', 'desc');
-      return faqs;
-    } catch (err) {
-      log(`Failed to fetch FAQs by category: ${err.message}`, 'ERROR');
-      throw err;
-    }
+    return db('faq').where({ category }).orderBy('created_at', 'desc');
   },
 
-  /**
-   * Search FAQs by keyword
-   */
   async searchFaqs(keyword) {
-    try {
-      const faqs = await db('faq')
-        .where('question', 'like', `%${keyword}%`)
-        .orWhere('answer', 'like', `%${keyword}%`)
-        .orderBy('created_at', 'desc')
-        .select('*');
-
-      return faqs;
-    } catch (err) {
-      log(`Failed to search FAQs: ${err.message}`, 'ERROR');
-      throw err;
-    }
+    return db('faq')
+      .where('question', 'like', `%${keyword}%`)
+      .orWhere('answer', 'like', `%${keyword}%`)
+      .orderBy('created_at', 'desc');
   },
 };
 

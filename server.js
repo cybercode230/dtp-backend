@@ -32,11 +32,27 @@ const swaggerOptions = {
     },
     servers: [
       { url: `http://localhost:${process.env.PORT || 5000}` }
-    ]
+    ],
+    components: {
+      parameters: {
+        UserIdHeader: {
+          name: 'user-id',
+          in: 'header',
+          description: 'UUID of the user performing this action',
+          required: true,
+          schema: {
+            type: 'string',
+            format: 'uuid'
+          }
+        }
+      }
+    }
   },
   apis: ['./routes/*.js', './controllers/*.js']
 };
 const swaggerSpec = swaggerJsDoc(swaggerOptions);
+
+// Swagger UI
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // API Routes
