@@ -53,3 +53,6 @@
 [2025-11-20T12:20:22.231Z] [INFO] Server running at http://localhost:5000
 [2025-11-20T12:20:22.271Z] [INFO] Database connected successfully
 [2025-11-20T12:21:06.384Z] [ERROR] Failed to create user: insert into `users` (`email`, `full_name`, `password_hash`, `role_id`) values ('cyber@123gmail.com', DEFAULT, '$2b$10$s7NpNcqDgNooKfVevjzJHewhDUFmxAJlZRH83Qjkqnp6A.KDIW6v.', 1) - Field 'full_name' doesn't have a default value
+[2025-11-20T12:28:22.386Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:28:23.217Z] [INFO] Database connected successfully
+[2025-11-20T12:29:51.703Z] [ERROR] Failed to create user: insert into `users` (`email`, `full_name`, `password_hash`, `role_id`) values ('cyber@123gmail.com', 'Guest User', '$2b$10$dooHg5R8gooIm8QYa/ZM1uZgOAQ2RQEVUcxMQjC2M6QsBrA/IdjCO', 1) - Cannot add or update a child row: a foreign key constraint fails (`dtp_db`.`users`, CONSTRAINT `fk_users_role` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON UPDATE CASCADE)
