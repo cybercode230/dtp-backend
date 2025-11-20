@@ -1,0 +1,55 @@
+[2025-11-20T10:50:12.630Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:50:13.083Z] [INFO] Database connected successfully
+[2025-11-20T10:50:18.791Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:50:18.825Z] [INFO] Database connected successfully
+[2025-11-20T10:50:30.961Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:50:31.126Z] [INFO] Database connected successfully
+[2025-11-20T10:50:31.163Z] [ERROR] Failed to create FAQ: insert into `faq` (`answer`, `category`, `created_by`, `question`, `updated_by`) values ('Desktop Publishing software.', 'Software', 1, 'What is DTP?', 1) - Cannot add or update a child row: a foreign key constraint fails (`dtp_db`.`faq`, CONSTRAINT `fk_faq_updated_by` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE)
+[2025-11-20T10:50:31.214Z] [INFO] FAQ updated with ID: undefined
+[2025-11-20T10:50:31.236Z] [INFO] FAQ deleted with ID: undefined
+[2025-11-20T10:50:31.623Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:50:31.638Z] [INFO] Database connected successfully
+[2025-11-20T10:50:31.826Z] [INFO] Permission created with ID: 1
+[2025-11-20T10:50:31.904Z] [INFO] Permission updated with ID: 1
+[2025-11-20T10:50:32.026Z] [INFO] Permission deleted with ID: 1
+[2025-11-20T10:50:32.272Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:50:32.418Z] [INFO] Database connected successfully
+[2025-11-20T10:50:32.434Z] [ERROR] Failed to create user: insert into `users` (`email`, `full_name`, `password_hash`, `role_id`) values ('testuser@example.com', 'Test User', '$2b$10$EG8bZKvO2z4wTmz1pBaAi.FnVUR/7eGZ9b9PNpdA.0C4X/rnFaOM6', 1) - Cannot add or update a child row: a foreign key constraint fails (`dtp_db`.`users`, CONSTRAINT `fk_users_role` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON UPDATE CASCADE)
+[2025-11-20T10:50:32.458Z] [INFO] User updated with ID: undefined
+[2025-11-20T10:50:32.467Z] [INFO] User deleted with ID: undefined
+[2025-11-20T10:50:32.705Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:50:32.721Z] [INFO] Database connected successfully
+[2025-11-20T10:50:32.760Z] [INFO] Role created with ID: 1
+[2025-11-20T10:50:32.837Z] [INFO] Role updated with ID: 1
+[2025-11-20T10:50:32.926Z] [INFO] Role deleted with ID: 1
+[2025-11-20T10:50:33.123Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:50:33.138Z] [INFO] Database connected successfully
+[2025-11-20T10:50:33.293Z] [INFO] Permission 2 assigned to role 2
+[2025-11-20T10:50:33.371Z] [INFO] Permission 2 removed from role 2
+[2025-11-20T10:52:34.203Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:52:34.249Z] [INFO] Database connected successfully
+[2025-11-20T10:52:51.436Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:52:51.481Z] [INFO] Database connected successfully
+[2025-11-20T10:53:20.414Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T10:53:20.447Z] [INFO] Database connected successfully
+[2025-11-20T11:48:11.804Z] [ERROR] Failed to create FAQ: insert into `faq` (`answer`, `category`, `created_by`, `question`, `updated_by`) values ('this is about the thing', 'sample', 0, 'what is dtp progrma', 0) - Cannot add or update a child row: a foreign key constraint fails (`dtp_db`.`faq`, CONSTRAINT `fk_faq_updated_by` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE)
+[2025-11-20T12:13:52.612Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:13:52.808Z] [INFO] Database connected successfully
+[2025-11-20T12:14:05.444Z] [ERROR] Failed to create FAQ: insert into `faq` (`answer`, `category`, `created_by`, `question`, `updated_by`) values ('DTP is a support center platform to manage FAQs.', 'General', 1, 'What is DTP program?', 1) - Cannot add or update a child row: a foreign key constraint fails (`dtp_db`.`faq`, CONSTRAINT `fk_faq_updated_by` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE)
+[2025-11-20T12:19:45.627Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:19:45.664Z] [INFO] Database connected successfully
+[2025-11-20T12:19:48.405Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:19:48.455Z] [INFO] Database connected successfully
+[2025-11-20T12:19:59.069Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:19:59.122Z] [INFO] Database connected successfully
+[2025-11-20T12:20:00.359Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:20:00.392Z] [INFO] Database connected successfully
+[2025-11-20T12:20:03.635Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:20:03.692Z] [INFO] Database connected successfully
+[2025-11-20T12:20:11.154Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:20:11.195Z] [INFO] Database connected successfully
+[2025-11-20T12:20:16.008Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:20:16.052Z] [INFO] Database connected successfully
+[2025-11-20T12:20:22.231Z] [INFO] Server running at http://localhost:5000
+[2025-11-20T12:20:22.271Z] [INFO] Database connected successfully
+[2025-11-20T12:21:06.384Z] [ERROR] Failed to create user: insert into `users` (`email`, `full_name`, `password_hash`, `role_id`) values ('cyber@123gmail.com', DEFAULT, '$2b$10$s7NpNcqDgNooKfVevjzJHewhDUFmxAJlZRH83Qjkqnp6A.KDIW6v.', 1) - Field 'full_name' doesn't have a default value
